@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+<!--Autowiring ByType, ByName And Constructor-->
+<context:annotation-config/>
+<bean name = "address" class  = "com.springframework.springcoreadvances.Autowiring.Address" c:houseNumber = "97" c:street = "11-B" c:city = "Washington DC, USA."/>
+<bean name = "address2" class  = "com.springframework.springcoreadvances.Autowiring.Address" c:houseNumber = "987" c:street = "110-A" c:city = "London, UK."/>
+<!--Autowiring ByType 
+<bean name = "employee2" class = "com.springframework.springcoreadvances.Autowiring.Employee" c:employeeId = "00799" c:employeeName = "Rana Tanveer Anwar" autowire="byType"/>
+-->
+<!--Autowiring ByName
+<bean name = "employee2" class = "com.springframework.springcoreadvances.Autowiring.Employee" c:employeeId = "00799" c:employeeName = "Rana Tanveer Anwar" autowire="byName"/>
+-->
+<!--Autowiring Constructor-->
+<bean name = "employee2" class = "com.springframework.springcoreadvances.Autowiring.Employee"  autowire="constructor"/>
+
+</beans>

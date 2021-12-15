@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+    
+	<!--Injecting Interfaces-->
+	<bean class="com.springframework.springcoreadvances.injecting.Interfaces.OrderDAOImpl" name="orderDAO"/>
+	<bean class="com.springframework.springcoreadvances.injecting.Interfaces.OrderDAOImpl2" name="orderDAO2"/>
+	
+	<bean class="com.springframework.springcoreadvances.injecting.Interfaces.OrderBOImpl" name="orderBOImpl"> 
+		<property name="orderDAO" ref = "orderDAO"/>
+	</bean>
+	<bean class="com.springframework.springcoreadvances.injecting.Interfaces.OrderBOImpl" name="orderBOImpl2"> 
+		<property name="orderDAO" ref = "orderDAO2"/>
+	</bean>
+</beans>
